@@ -59,7 +59,11 @@ func main() {
 		}(p)
 	}
 
+	//this line is necessary to make sure that the program doesn't finish before
+	//the goroutine does - ie. the main method finishes & closes before output from
+	//go function is printed
 	time.Sleep(5 * time.Second)
+
 }
 
 func pathFromFlag() string {
